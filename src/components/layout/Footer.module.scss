@@ -1,0 +1,100 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.footer {
+    background-color: #000;
+    padding: 6rem 0 2rem;
+    border-top: 1px solid $color-border;
+}
+
+.container {
+    @include container;
+}
+
+.topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+.headline {
+    font-family: $font-family-display;
+    font-size: 4rem;
+    line-height: 1;
+    max-width: 500px;
+}
+
+.links {
+    display: flex;
+    gap: 4rem;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h4 {
+            font-family: $font-family-sans;
+            color: $color-text-muted;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            font-family: $font-family-display;
+            font-size: 1.2rem;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.tickerWrapper {
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2rem 0;
+    border-top: 1px solid $color-border;
+    border-bottom: 1px solid $color-border;
+    margin-bottom: 4rem;
+}
+
+.ticker {
+    font-family: $font-family-display;
+    font-size: 8rem;
+    font-weight: 800;
+    display: inline-block;
+    animation: scrollFooter 20s linear infinite;
+    color: transparent;
+    -webkit-text-stroke: 1px $color-text-muted;
+
+    span {
+        padding: 0 4rem;
+    }
+}
+
+@keyframes scrollFooter {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.bottomSection {
+    display: flex;
+    justify-content: space-between;
+    font-family: $font-family-sans;
+    font-size: 0.9rem;
+    color: $color-text-muted;
+}

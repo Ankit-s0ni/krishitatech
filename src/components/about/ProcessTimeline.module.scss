@@ -1,0 +1,76 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+    padding: 8rem 0;
+    background-color: $color-surface;
+}
+
+.container {
+    @include container;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.timelineLine {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background-color: rgba($color-border, 0.3);
+    z-index: 0;
+}
+
+.stepsWrapper {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8rem;
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+}
+
+.stepContent {
+    width: 40%;
+
+    h3 {
+        font-family: $font-family-display;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: $color-text-main;
+    }
+
+    p {
+        font-family: $font-family-sans;
+        color: $color-text-muted;
+        line-height: 1.6;
+    }
+}
+
+.stepNumber {
+    width: 60px;
+    height: 60px;
+    background: $color-bg;
+    border: 1px solid $color-border;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-family-display;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 0 0 10px $color-surface; // Mask effect
+}

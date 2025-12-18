@@ -1,0 +1,70 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+    padding: 6rem 0;
+    background-color: $color-bg;
+    overflow: hidden;
+    position: relative;
+
+    // Fade masks
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 15rem;
+        height: 100%;
+        z-index: 2;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, $color-bg, transparent);
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, $color-bg, transparent);
+    }
+}
+
+.track {
+    display: flex;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.logoItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    span {
+        font-family: $font-family-display;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $color-text-main;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
