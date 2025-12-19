@@ -1,0 +1,175 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.awards {
+    padding: 6rem 0;
+    background: $color-surface;
+}
+
+.container {
+    @include container;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    h2 {
+        font-family: $font-family-display;
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 800;
+        color: $color-text-main;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: $color-text-muted;
+        max-width: 600px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.awardCard {
+    background: $color-bg;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid $color-border;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.awardIcon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, $color-accent, lighten($color-accent, 10%));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.iconPlaceholder {
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.awardContent {
+    flex: 1;
+
+    h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: $color-text-main;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+    }
+
+    .organization {
+        font-size: 0.95rem;
+        color: $color-accent;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+}
+
+.awardMeta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.year,
+.category {
+    font-size: 0.8rem;
+    color: $color-text-muted;
+    background: rgba($color-text-muted, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat {
+    h3 {
+        font-family: $font-family-display;
+        font-size: 3rem;
+        font-weight: 800;
+        color: $color-accent;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+    }
+
+    p {
+        font-size: 1rem;
+        color: $color-text-muted;
+        font-weight: 500;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .awards {
+        padding: 4rem 0;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .awardCard {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .awardIcon {
+        align-self: center;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .stat h3 {
+        font-size: 2.5rem;
+    }
+}

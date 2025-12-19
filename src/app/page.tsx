@@ -1,18 +1,23 @@
 import Hero from '@/components/home/Hero';
-import ServicesSlide from '@/components/home/ServicesSlide';
-import StatsCounter from '@/components/home/StatsCounter';
 import ClientMarquee from '@/components/home/ClientMarquee';
+import ServicesSlide from '@/components/home/ServicesSlide';
+import Process from '@/components/home/Process';
+import StatsCounter from '@/components/home/StatsCounter';
+import Awards from '@/components/home/Awards';
+import Testimonials from '@/components/home/Testimonials';
+import CTA from '@/components/home/CTA';
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <ServicesSlide />
-      <StatsCounter />
-      <ClientMarquee />
-      <div style={{ height: '50vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <h2 style={{ fontSize: '2rem', opacity: 0.5 }}>More coming soon...</h2>
-      </div>
-    </main>
-  );
+export default function HomePage() {
+    return (
+        <main>
+            <Hero />
+            <ClientMarquee />
+            <ServicesSlide />
+            <Process />
+            <StatsCounter />
+            <Awards />
+            <Testimonials />
+            <CTA />
+        </main>
+    );
 }

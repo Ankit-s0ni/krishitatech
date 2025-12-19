@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import styles from './ProcessTimeline.module.scss';
+import styles from './Process.module.scss';
 
 const steps = [
     { id: 1, title: 'Discovery', description: 'We immerse ourselves in your brand to understand your goals and audience.' },
@@ -11,7 +11,7 @@ const steps = [
     { id: 4, title: 'Launch', description: 'We handle the deployment and ensure a smooth takeoff into the market.' },
 ];
 
-export default function ProcessTimeline() {
+export default function Process() {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,

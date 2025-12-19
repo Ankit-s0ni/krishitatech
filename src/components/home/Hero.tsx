@@ -27,8 +27,8 @@ export default function Hero() {
     return (
         <section className={styles.hero} ref={containerRef}>
             <div className={styles.background}>
-                {/* Placeholder for video - using a dark gradient for now or a reliable placeholder */}
-                <div style={{ width: '100%', height: '100%', background: 'radial-gradient(circle at center, #1a1a1a 0%, #050505 100%)' }} />
+                {/* Modern light gradient background */}
+                <div style={{ width: '100%', height: '100%', background: 'linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%)' }} />
             </div>
 
             <motion.div
@@ -45,7 +45,7 @@ export default function Hero() {
                         <motion.span variants={titleVariants} style={{ display: 'block' }}>Digital</motion.span>
                     </span>
                     <span style={{ overflow: 'hidden', display: 'block' }}>
-                        <motion.span variants={titleVariants} style={{ color: '#3b82f6', display: 'block' }}>Legends</motion.span>
+                        <motion.span variants={titleVariants} style={{ color: '#2563eb', display: 'block' }}>Legends</motion.span>
                     </span>
                 </h1>
 

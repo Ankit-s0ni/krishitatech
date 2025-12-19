@@ -51,7 +51,7 @@ export default function ServicesSlide() {
                         <div key={service.id} className={styles.card}>
                             <span className={styles.cardNumber}>{service.id}</span>
                             {/* Placeholder for optional background image */}
-                            <div className={styles.cardImage} style={{ background: `linear-gradient(45deg, #111, #222)` }} />
+                            <div className={styles.cardImage} style={{ background: `linear-gradient(45deg, #f5f5f5, #e5e5e5)` }} />
 
                             <h3>{service.title}</h3>
                             <p>{service.description}</p>

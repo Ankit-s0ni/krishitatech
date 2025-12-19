@@ -8,13 +8,14 @@
     width: 100%;
     padding: 1.5rem 0;
     z-index: $z-nav;
-    transition: padding 0.3s ease;
+    transition: all 0.3s ease;
 
     &.scrolled {
         padding: 1rem 0;
-        background: rgba($color-bg, 0.7);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba($color-border, 0.5);
+        background: rgba($color-surface, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid $color-border;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
     }
 }
 
@@ -32,11 +33,21 @@
     color: $color-text-main;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-accent;
+    }
+
+    .logoAccent {
+        color: $color-accent;
+    }
 }
 
 .navLinks {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
+    align-items: center;
 
     // Hide on mobile (simplified for now)
     @media (max-width: 768px) {
@@ -46,27 +57,55 @@
 
 .link {
     font-family: $font-family-sans;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     font-weight: 500;
-    color: $color-text-muted;
+    color: $color-text-main;
     transition: color 0.3s ease;
     position: relative;
 
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $color-accent;
+        transition: width 0.3s ease;
+    }
+
     &:hover {
-        color: $color-text-main;
+        color: $color-accent;
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    &.active {
+        color: $color-accent;
+        font-weight: 600;
+
+        &::after {
+            width: 100%;
+        }
     }
 }
 
 .cta {
-    padding: 0.8rem 1.5rem;
-    background: $color-text-main;
-    color: $color-bg;
+    padding: 0.75rem 1.75rem;
+    background: $color-accent;
+    color: white;
     font-weight: 600;
-    border-radius: 4px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid $color-accent;
 
     &:hover {
-        opacity: 0.9;
-        transform: scale(1.05);
+        background: transparent;
+        color: $color-accent;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($color-accent, 0.3);
     }
 }

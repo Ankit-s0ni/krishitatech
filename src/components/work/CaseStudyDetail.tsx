@@ -18,7 +18,7 @@ export default function CaseStudyDetail({ slug }: { slug: string }) {
         <article>
             <header className={styles.header}>
                 <div className={styles.bgImage}>
-                    <div style={{ width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent, #050505)' }} />
+                    <div style={{ width: '100%', height: '100%', background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8))' }} />
                     {/* Real image would go here */}
                 </div>
                 <div className={styles.headerContent}>
@@ -26,15 +26,15 @@ export default function CaseStudyDetail({ slug }: { slug: string }) {
                     <div className={styles.meta}>
                         <div>
                             <span>Client</span>
-                            <p style={{ color: '#fff' }}>Tech Corp</p>
+                            <p>Tech Corp</p>
                         </div>
                         <div>
                             <span>Service</span>
-                            <p style={{ color: '#fff' }}>Web & Brand</p>
+                            <p>Web & Brand</p>
                         </div>
                         <div>
                             <span>Year</span>
-                            <p style={{ color: '#fff' }}>2024</p>
+                            <p>2024</p>
                         </div>
                     </div>
                 </div>
@@ -58,15 +58,15 @@ export default function CaseStudyDetail({ slug }: { slug: string }) {
                     <h2 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Results</h2>
                     <div style={{ display: 'flex', gap: '2rem', justifyContent: 'space-between' }}>
                         <div>
-                            <h3 style={{ fontSize: '3rem', color: '#3b82f6' }}>+200%</h3>
+                            <h3 style={{ fontSize: '3rem', color: '#2563eb' }}>+200%</h3>
                             <p>Organic Traffic</p>
                         </div>
                         <div>
-                            <h3 style={{ fontSize: '3rem', color: '#3b82f6' }}>50%</h3>
+                            <h3 style={{ fontSize: '3rem', color: '#2563eb' }}>50%</h3>
                             <p>Conversion Rate</p>
                         </div>
                         <div>
-                            <h3 style={{ fontSize: '3rem', color: '#3b82f6' }}>4.9</h3>
+                            <h3 style={{ fontSize: '3rem', color: '#2563eb' }}>4.9</h3>
                             <p>App Store Rating</p>
                         </div>
                     </div>

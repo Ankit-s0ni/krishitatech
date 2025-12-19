@@ -84,7 +84,7 @@ export default function ServiceDeepDive() {
                         <h2>{s.title}</h2>
                         <div className={styles.imagePlaceholder}>
                             {/* Image would go here */}
-                            <div style={{ padding: '2rem', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#111', color: '#333' }}>
+                            <div style={{ padding: '2rem', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#f5f5f5', color: '#666666' }}>
                                 VISUAL VISUALIZATION
                             </div>
                         </div>

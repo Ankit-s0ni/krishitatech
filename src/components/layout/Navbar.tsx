@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.scss';
 import clsx from 'clsx';
 
@@ -14,6 +15,7 @@ const navItems = [
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,12 +35,16 @@ export default function Navbar() {
         >
             <nav className={styles.navContainer}>
                 <Link href="/" className={styles.logo}>
-                    KRISHITA TECH<span style={{ color: '#3b82f6' }}>.</span>
+                    KRISHITA TECH<span className={styles.logoAccent}>.</span>
                 </Link>
 
                 <div className={styles.navLinks}>
                     {navItems.map((item) => (
-                        <Link key={item.name} href={item.href} className={styles.link}>
+                        <Link 
+                            key={item.name} 
+                            href={item.href} 
+                            className={clsx(styles.link, pathname === item.href && styles.active)}
+                        >
                             {item.name}
                         </Link>
                     ))}

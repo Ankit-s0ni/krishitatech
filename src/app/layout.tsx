@@ -20,8 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={clsx(inter.variable, outfit.variable)}>
+    <html lang="en">
+      <body className={clsx(inter.variable, outfit.variable)} suppressHydrationWarning>
         <SmoothScroll>
           <Navbar />
           {children}
